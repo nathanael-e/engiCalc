@@ -10,16 +10,16 @@ namespace engicalc
         public std::exception
     {
 
-        unkown_char_sequence(std::string& _err_msg)
-            :err_msg(&_err_msg)
+        unkown_char_sequence(const std::string& _err_msg)
+            :err_msg(_err_msg)
         {}
 
         virtual const char* what() const throw()
         {
-            return err_msg->c_str();  
+            return err_msg.c_str();  
         }
 
-        std::string* err_msg;
+        std::string err_msg;
     };
 }
 
