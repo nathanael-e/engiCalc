@@ -4,48 +4,16 @@
 #include<iostream>
 #include<vector>
 #include<regex>
-
 #include "unkown_char_sequence.hpp"
+#include "token.hpp"
 
 namespace engicalc
 {
+    using TokenType = Token::TokenType; 
+    using Tokens = std::vector<Token>;
+
     class Tokenizer
     {
-        enum TokenType
-        {
-            Complex,
-            Number,
-            Function,
-            Separator,
-            Operator,
-            LeftBracket,
-            RightBracket
-        };
-
-        class Token
-        {
-            public:
-
-                Token(TokenType, std::string);
-
-                TokenType getType() const;
-
-                int getPrecedance() const;
-
-                bool hasLeftAssociativity() const;
-
-                std::string toString() const;
-            
-            private:
-
-                TokenType type;
-                std::string key;
-                int precedance = -1;
-                bool leftAssociativity = true;
-        };
-
-        using Tokens = std::vector<Token>;
-
         public:
 
             Tokens toTokens(std::string);
