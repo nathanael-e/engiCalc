@@ -1,4 +1,5 @@
 #include "gtest/gtest.h"
+#include "TokenizerTester.cpp"
 
 int main(int argc, char** argv)
 {
