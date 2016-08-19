@@ -7,12 +7,12 @@ Token::Token(TokenType _type, std::string _key):
 {
    if(type == Operator)
    {
-        if(key[0] == ('+'||'-'))
+        if(key[0] == '+'|| key[0] == '-')
         {
             precedance = 2;
             asc = Left;
         }
-        else if(key[0] == ('*'||'/'))
+        else if(key[0] == '*'|| key[0] == '/')
         {
             precedance = 3;
             asc = Left;
