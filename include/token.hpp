@@ -7,21 +7,20 @@ namespace engicalc
 {
     class Token
     {
-
-        enum Associativity{None, Left, Right};
-
-        enum TokenType
-        {
-            Complex,
-            Number,
-            Function,
-            Separator,
-            Operator,
-            LeftBracket,
-            RightBracket
-        };
-
         public:
+
+            enum Associativity{None, Left, Right};
+
+            enum TokenType
+            {
+                Complex,
+                Number,
+                Function,
+                Separator,
+                Operator,
+                LeftBracket,
+                RightBracket
+            };
  
             Token(TokenType, std::string);
         
