@@ -79,3 +79,34 @@ TEST_F(TokenizerTester, OperatorTest)
         ASSERT_EQ("^", t.getKey());
     }
 }
+
+TEST_F(TokenizerTester, RandomTests)
+{
+
+    Tokenizer tokenFactory;
+
+    {
+        auto tokens = tokenFactory.toTokens("sin(45)");
+        ASSERT_EQ(4, tokens.size());
+
+        auto t = tokens[0];
+        
+        ASSERT_EQ(TokenType::Function, t.getType());
+        ASSERT_EQ("sin", t.getKey());
+
+        t = tokens[1];
+
+        ASSERT_EQ(TokenType::LeftBracket, t.getType());
+        ASSERT_EQ("(", t.getKey());
+
+        t = tokens[2];
+
+        ASSERT_EQ(TokenType::Number, t.getType());
+        ASSERT_EQ("45", t.getKey());
+
+        t = tokens[3];
+
+        ASSERT_EQ(TokenType::RightBracket, t.getType());
+        ASSERT_EQ(")", t.getKey());
+    }
+}
