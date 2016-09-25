@@ -35,7 +35,6 @@ GTEST_SRC_PATH := test/tester.cpp
 #-lboost_thread
 #-lboost_atomic
 GTEST := -lgtest -lgtest_main -lpthread
-SIMPLE_WEB_SERVER = -rdynamic -lboost_regex -lboost_system -lboost_filesystem -lboost_date_time -lboost_chrono -lpthread
 
 #Include the headers in every subdirectory.
 INC := $(subst $(INCDIR), -I $(INCDIR), $(INCDIRS))
