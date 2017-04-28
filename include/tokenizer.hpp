@@ -2,7 +2,7 @@
 #define TOKENIZER_HPP
 
 #include<iostream>
-#include<vector>
+#include<deque>
 #include<regex>
 #include "unkown_char_sequence.hpp"
 #include "token.hpp"
@@ -10,7 +10,7 @@
 namespace engicalc
 {
     using TokenType = Token::TokenType; 
-    using Tokens = std::vector<Token>;
+    using Tokens = std::deque<Token>;
 
     class Tokenizer
     {

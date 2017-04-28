@@ -5,14 +5,14 @@ using namespace engicalc;
 Token::Token(TokenType _type, std::string _key):
     type(_type), key(_key)
 {
-   if(type == Operator)
+   if(type == OPERATOR)
    {
-        if(key[0] == '+'|| key[0] == '-')
+        if(key[0] == '+' || key[0] == '-')
         {
             precedance = 2;
             asc = Left;
         }
-        else if(key[0] == '*'|| key[0] == '/')
+        else if(key[0] == '*' || key[0] == '/')
         {
             precedance = 3;
             asc = Left;
@@ -44,6 +44,16 @@ bool Token::hasLeftAssociativity() const
 std::string Token::getKey() const
 {
     return key;
+}
+
+bool Token::operator==(const TokenType& _type) const
+{
+    return type == _type;
+}
+
+bool Token::operator!=(const TokenType& _type) const
+{
+    return type != _type;
 }
 
 bool Token::operator==(const Token& other) const

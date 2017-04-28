@@ -13,13 +13,13 @@ namespace engicalc
 
             enum TokenType
             {
-                Complex,
-                Number,
-                Function,
-                Separator,
-                Operator,
-                LeftBracket,
-                RightBracket
+                COMPLEX,
+                NUMBER,
+                FUNCTION,
+                SEPARATOR,
+                OPERATOR,
+                LEFTBRACKET,
+                RIGHTBRACKET
             };
  
             Token(TokenType, std::string);
@@ -32,7 +32,11 @@ namespace engicalc
 
             std::string getKey() const;
 
-            bool operator==(const Token& ) const;
+            bool operator==(const TokenType&) const;
+
+            bool operator!=(const TokenType&) const;
+
+            bool operator==(const Token&) const;
 
             bool operator!=(const Token&) const;
 
